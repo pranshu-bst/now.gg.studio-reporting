@@ -1,4 +1,8 @@
 import json
+from queries.company import CompanyQueries
+from queries.user_account import UserAccountQueries
+from queries.app import AppQueries
+from queries.app_submission import AppSubmissionQueries
 
 user_tnc_accepted_rawfile = "user_tnc_accepted_rawfile.json"
 
@@ -14,4 +18,10 @@ def get_user_tnc_time_map():
         }
     return user_tnc_time_map
 
-print(get_user_tnc_time_map())
+def get_users_map():
+    user_account_collection = UserAccountQueries()
+    users, users_count = user_account_collection.get_paginated_user_list(sort_order=["-modified_at"])
+    return users
+
+result = get_users_map()
+print(result)

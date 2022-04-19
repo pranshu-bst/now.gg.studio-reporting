@@ -1,5 +1,3 @@
-MONGO_URI = "mongodb+srv://developer-portal-prod:M3qYdZ81y9lMmi4T@developer-portal-prod.8cyfq.mongodb.net/nowgg_developer?retryWrites=true&w=majority"
-
 DATABASE_NAME = 'nowgg_developer'
 
 TOKEN_VALIDITY = 24 * 60

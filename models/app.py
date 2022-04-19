@@ -1,11 +1,9 @@
 from datetime import datetime
-
+import os
 from mongoengine import *
-
-import constants
 import constants
 
-MONGO_URI = constants.MONGO_URI
+MONGO_URI = os.environ.get('MONGO_URI')
 connect(host=MONGO_URI)
 AppStatus = (constants.AppStatus.DISABLED, constants.AppStatus.ACTIVE)
 
